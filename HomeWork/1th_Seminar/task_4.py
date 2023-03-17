@@ -5,29 +5,30 @@
 print('Task #4')
 
 #-M- Method of calcualte of cranes
-def count_cranes(s):
+def CountCranes(s):
     # Let's assume Petya and Seryozha made x number of cranes each.
     # Then Katya made 2x cranes.
     # Total number of cranes is S = 2*(x+x) + x + x = 6x
     # Therefore, x = S/6
+    x = int(s//6) #produced by each child
+    petyaCranes = seryozhaCranes = int(x)
     if not s%6 == 0:
-        print("Error of entering: someone  of kids is cheating :)")
-        return None
+        difference = s - 6*x
+        if difference <=3: 
+            katyaCranes = int(difference+4*x) #produced only by Katya while the boys is chilling
+            print("Assumed that Katya can make faster then boys, so she created cranes before guy could do enithing")
+            return (petyaCranes), (katyaCranes), (seryozhaCranes)
+        else: 
+            print("the number strictly contradicts the conditions, enter another")
     else:
-        x = round(s/6, 0)
-    
-    # Calculate the number of cranes made by each child
-    petya_cranes = seryozha_cranes = x
-    katya_cranes = 4*x
-    
-    # Return the number of cranes made by each child as a tuple
-    return int(petya_cranes), int(katya_cranes), int(seryozha_cranes)
-
+        katyaCranes = int(4*x)
+        return f'Petya made: {(petyaCranes)}, Katya made:  {(katyaCranes)}, Seryozha made: {(seryozhaCranes)}'
+        
 # enter input data
 s = int(input('введите число общего кол-ва журавликов: '))   # Total number of cranes
 
 # ouput data rezult
-result = count_cranes(s)
+result = CountCranes(s)
 print(result)  
 
 
