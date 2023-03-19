@@ -2,17 +2,30 @@
 # некоторые – гербом. Определите минимальное число монеток, которые нужно
 # перевернуть, чтобы все монетки были повернуты вверх одной и той же
 # стороной. Выведите минимальное количество монет, которые нужно перевернуть.
+print('Task #10')
 
-n = int(input())
-count_zero = 0
-count_one = 0
-for i in range(n):
-    x = int(input())
+import random
+while True:
+    n = input('введите число монеток: ')
+    if n.isdigit():
+         n = abs(int(n))
+         break
+    else:
+         print ('Неверно! введите целое цисло')
+         
+
+count_Orel = 0
+count_Reshka = 0
+for _ in range(n): # for _ in range(0,10,2)
+    x = random.randint(0,1)
     if x == 0:
-        count_zero += 1
+        count_Orel += 1
     else:
-        count_one += 1
-    if count_one > count_zero:
-        print(count_zero)
-    else:
-        print(count_one)
+        count_Reshka += 1
+print(f'Розыгрыш: орлов {count_Orel} и решек {count_Reshka} на столе')
+if count_Orel < count_Reshka:
+    print(f'число орлов надо перевернуть - {count_Orel}')
+else:
+    print(f'число решек надо перевернуть -  {count_Reshka}')
+
+
