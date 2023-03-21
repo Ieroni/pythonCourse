@@ -4,6 +4,8 @@
 # строках записаны N целых чисел Ai. Последняя строка содержит число X
 print('Task #16')
 import random
+mySet = set()
+
 n = int(input("Введите число N элементов в массиве: "))
 array = []
 #-М создание массива
@@ -21,3 +23,5 @@ for num in array:
 
 print("число", x, "встречается", count, "раз в массиве.")
 
+mySet =(n, array, x)
+print(mySet)
