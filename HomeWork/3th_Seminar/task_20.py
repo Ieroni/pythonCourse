@@ -33,7 +33,7 @@ russian_points = {'А': 1, 'Б': 3, 'В': 5, 'Г': 3, 'Д': 2, 'Е': 1, 'Ё': 8,
                   'Ч': 5, 'Ш': 10, 'Щ': 10, 'Ъ': 10, 'Ы': 4, 'Ь': 3, 'Э': 8, 'Ю': 8,
                   'Я': 5}
 
-word = input()  # Read the word from the user
+word = input('введите ваше слово: ')  # Read the word from the user
 points = 0  # Initialize the total points to 0
 
 # Iterate through each letter in the word and add its point value to the total points
