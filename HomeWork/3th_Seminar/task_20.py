@@ -33,17 +33,17 @@ russian_points = {'А': 1, 'Б': 3, 'В': 5, 'Г': 3, 'Д': 2, 'Е': 1, 'Ё': 8,
                   'Ч': 5, 'Ш': 10, 'Щ': 10, 'Ъ': 10, 'Ы': 4, 'Ь': 3, 'Э': 8, 'Ю': 8,
                   'Я': 5}
 
-word = input('введите ваше слово: ')  # Read the word from the user
-points = 0  # Initialize the total points to 0
+word = input('введите ваше слово: ')  
+points = 0  
 
-# Iterate through each letter in the word and add its point value to the total points
+# метод для подсчета очков в слове
 for letter in word.upper():
     if letter in english_points:
         points += english_points[letter]
     elif letter in russian_points:
         points += russian_points[letter]
     else:
-        print(f"Error: {letter} is not a valid letter for this program.")
+        print(f"Error: {letter} не действительно для данной программы.")
         break
 
-print(f"The word '{word}' is worth {points} points.")  # Print the total points for the word
+print(f"Слово'{word}' составляет {points} очков.")  
