@@ -3,23 +3,20 @@
 # Пользователь вводит 2 числа. n - кол-во элементов первого множества. 
 # m - кол-во элементов второго множества. Затем пользователь вводит сами элементы множеств.
 print('Task #22')
-mol = [int(x) for x in input().split()]
-n = mol[0]
-m = mol[1]
-set_1 = set()
-set_2 = set()
-list_1 = list()
-a = [int(x) for x in input().split()]
-k = set(a)
+import string
+import random
 
-for i in k:
-    set_1.add(i)
-    b = [int(x) for x in input().split()]
-    k1 = set(b)
-for i in k1:
-    set_2.add(i)
-    lok = set_1 & set_2
-    kool = list(lok)
+# string.ascii_letters 
+n = int(input('введите число для набора n: '))
+m = int(input('введите число для нарбора m: '))
+setDigits1 = set(' '.join([random.choice(string.digits) for _ in range(n)]))
+setDigits2 = set(' '.join([random.choice(string.digits) for _ in range(m)]))
+print(setDigits1)
+print(setDigits2)
+
+for i in setDigits2:
+    coincidences = setDigits1 & setDigits2
+    kool = list(coincidences)
     kool.sort()
 for i in kool:
     print(i, end=' ')
